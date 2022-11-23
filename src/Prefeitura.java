@@ -27,16 +27,19 @@ public class Prefeitura {
 	}
 
 	public double calcularMaiorSalario() {
-		
-		return null;
+		double salarioMaior = 0;
+		for (Habitante habitante : todosOsHabitantes) {
+			if (salarioMaior < habitante.getSalario()) 
+				salarioMaior = habitante.getSalario();
+		}
+		return salarioMaior;
 	}
 
 	public double calcularPercentualSalarios() {
-		double pessoasSalarioMaior = 0;
+		double pessoasSalarioMenor = 0;
 		for (Habitante habitante : todosOsHabitantes) 
 			if (habitante.getSalario() < salarioComparacao)
-				pessoasSalarioMaior++;
-		
-		return 
+				pessoasSalarioMenor++;		
+		return pessoasSalarioMenor*100/todosOsHabitantes.size();
 	}
 }
