@@ -16,24 +16,26 @@ public class Aplicacao {
 	public static void main (String args[]) {
 		ArrayList<Habitante> todosOsHabitantes = new ArrayList<Habitante>();		
 		try (Scanner scanner = new Scanner(System.in)) {
-			double salario;
-			do {
+			double salario = 0;
+			while (salario >= 0) {
 				System.out.print("Informe o salario: ");
 				salario = Double.valueOf(scanner.next());
+				if (salario < 0)
+					break;
 				System.out.print("Informe a quantidade de filhos: ");
 				int quantidadeFilhos = Integer.valueOf(scanner.next());
 				Habitante habitante = new Habitante(salario, quantidadeFilhos);
 				todosOsHabitantes.add(habitante);
-			} while (salario >= 0);
+			}
 			Prefeitura prefeitura = new Prefeitura(todosOsHabitantes);			
 			String relatorio = String.format("Temos %s habitantes."
 					+ "\n A média do número de filhos é de %s."
 					+ "\n A média dos salários é de %s. "
 					+ "\n O maior salário dos habitantes é %s. "
 					+ "\n O percentual de pessoas com salário acima de R$ 150,00 é %s",
-					prefeitura.calcularHabitantes(),
-					prefeitura.calcularMediaSalarial(),
+					prefeitura.calcularHabitantes(),					
 					prefeitura.calcularMediaNumeroFilhos(),
+					prefeitura.calcularMediaSalarial(),
 					prefeitura.calcularMaiorSalario(),
 					prefeitura.calcularPercentualSalarios()
 					);

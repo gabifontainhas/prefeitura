@@ -22,7 +22,7 @@ public class Prefeitura {
 	public double calcularMediaSalarial() {
 		double totalSalarios = 0;		
 		for (Habitante habitante : todosOsHabitantes) 
-			totalSalarios += habitante.getQuantidadeFilhos();		
+			totalSalarios += habitante.getSalario();		
 		return totalSalarios/todosOsHabitantes.size();
 	}
 
