@@ -32,7 +32,7 @@ public class Aplicacao {
 					+ "\n A média do número de filhos é de %s."
 					+ "\n A média dos salários é de %s. "
 					+ "\n O maior salário dos habitantes é %s. "
-					+ "\n O percentual de pessoas com salário acima de R$ 150,00 é %s",
+					+ "\n O percentual de pessoas com salário abaixo de R$ 150,00 é %s",
 					prefeitura.calcularHabitantes(),					
 					prefeitura.calcularMediaNumeroFilhos(),
 					prefeitura.calcularMediaSalarial(),
